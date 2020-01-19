@@ -1,0 +1,63 @@
+html, body {
+    background: darkgreen;
+    margin: 0;
+}
+#buttons {
+    position: relative;
+    top: 680px;
+}
+#buttIncreace {
+    position: relative;
+    margin: 0;
+    width: 300px;
+    height: 130px;
+    font-size: 50px;
+}
+#buttDecreace {
+    position: relative;
+    margin: 0;
+    width: 300px;
+    height: 130px;
+    font-size: 50px;
+}
+
+#gravDown {
+    position: relative;
+    margin: 0;
+    width: 300px;
+    height: 130px;
+    font-size: 50px;
+}
+#gravUp {
+    position: relative;
+    margin: 0;
+    width: 300px;
+    height: 130px;
+    font-size: 50px;
+}
+#amountFigures span {
+    color: yellow;
+    font-size: 70px;
+}
+#totalSquare span {
+    color: yellow;
+    font-size: 70px;
+}
+
+#display {
+    position: relative;
+    display: inline;
+    top: 700px;
+    color: red;
+    font-size: 70px;
+}
+#display p{
+    margin: 30px;
+}
+
+canvas {
+    position: absolute;
+    top: 200px;
+
+    margin: 0 0 0 0;
+}
