@@ -5,32 +5,16 @@ class Button {
     return document.getElementById(id).onclick = function() {
       switch(id) {
         case 'buttIncreace':
-          if (config.perSecond< 1) {
-            config.perSecond *= 2;
-          } else {
-            config.perSecond++;
-          };
+          config.perSecond++;
           break;
-        case 'buttDecreace': 
-          if (config.perSecond< 2) {
-            config.perSecond /= 2;
-          } else {
-            config.perSecond--;
-          }
+        case 'buttDecreace':
+          if (config.perSecond > 0) config.perSecond--;
           break;
         case 'gravUp':  
-          if (config.gravity < 1) {
-            config.gravity *= 2;
-          } else {
-            config.gravity++;
-          };
+          config.gravity++;
           break;
         case 'gravDown':
-          if (config.gravity < 2) {
-            config.gravity /= 2;
-          } else {
-            config.gravity--;
-          };
+          if (config.gravity > 0) config.gravity--;
           break;
       }
     }

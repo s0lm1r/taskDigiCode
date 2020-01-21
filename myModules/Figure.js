@@ -2,17 +2,18 @@
 import {randomInteger} from './RandomInteger.js';
 
 class Figure {
-    constructor(mainSquare = false) {
-        if (mainSquare) return this._createSquare(1280, 720, 1);
-    }
     
   createFigure(shape) {
     const graphics = new PIXI.Graphics();
-    graphics.beginFill(Math.random() * 0xFFFFFF); 
+    const color = Math.random() * 0xFFFFFF;
+    graphics.beginFill(0xFFFFFF);
+    graphics.tint = color;
+    graphics.shape = shape;
 
     switch(shape) {
-      case 'square': 
-         return this._createSquare();
+      case 'square':
+        this._createSquare(graphics);
+        break;
       case 'circle': 
         this._createCircle(graphics);
         break; 
@@ -31,36 +32,32 @@ class Figure {
       case 'random': 
         this._createRandomShape(graphics);
         break;
-
-      
     }
     graphics.endFill();
     return graphics;
   }
 
-  _createSquare(sideA = 100, sideB = 100, color = Math.random()) {
-    const graphics = new PIXI.Graphics()
-    graphics.beginFill(color * 0xFFFFFF);
-    graphics.drawRect(0, 0, sideA, sideB);
-    graphics.squarePixels = sideA * sideB;
-    graphics.endFill();
-    return graphics;
+  _createSquare(graphics) {
+    const side = 100;
+    graphics.drawRect(0, 0, side, side);
+    graphics.squarePixels = Math.pow(side, 2);
+
   }
 
   _createCircle(graphics) {
     const radius = 50; 
     graphics.drawCircle(50, 50, 50);
-    graphics.endFill();
     graphics.squarePixels = Math.PI * Math.pow(radius, 2);
+    
   }
 
   _createEllipse(graphics) {
     const radius1 = 50;
     const radius2 = 25;
     graphics.drawEllipse(50, 25, radius1, radius2);
-    graphics.endFill();
     graphics.squarePixels = Math.PI * radius1 * radius2;
   }
+
   _createTriangle(graphics) {
     const side = 100;
     graphics.drawPolygon([
@@ -69,7 +66,6 @@ class Figure {
       side, side,
       0, 0
     ]);
-    graphics.endFill();
     graphics.squarePixels = (Math.pow(side, 2)) / 2;
   }
 
@@ -107,12 +103,8 @@ class Figure {
     graphics.drawCircle(100, 25, radius);
     graphics.drawCircle(25, 100, radius);
     graphics.drawCircle(100, 100, radius);
-   
-
     graphics.squarePixels = (Math.PI * Math.pow(radius, 2)) * 3 + Math.pow(side, 2);
   }
-
 }
 
 export const myFigure = new Figure();
-export default Figure;
