@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="style.css">
   <script src="piximin/pixi.min.js"></script>
   <script type="module" src="main.js" defer></script>
+  <script type="module" src="myModules/Game.js"> </script>
+  <script type="module" src="myModules/Controler.js"> </script>
   <script type="module" src="myModules/Figure.js"></script>
   <script type="module" src="myModules/Element.js"></script>
   <script type="module" src="myModules/Button.js"></script>
@@ -13,21 +15,23 @@
   <title>New task</title>
 </head>
 <body>
-  <div class="stats">
-    <p id="amountFigures"></p>
-    <p id="totalSquare"></p>
+  <div id="root">
+    <div class="stats">
+      <p id="amountFigures"></p>
+      <p id="totalSquare"></p>
+    </div>
+    <div class="buttons">
+      <div class="buttonsAmount">
+        <button id="buttIncreace">+</button>
+        <button id="buttDecreace">-</button>
+        <div id="generatedFigure"></div>
+      </div>
+      <div class="buttonsGravity">
+        <button id="gravUp">+</button>
+        <button id="gravDown">-</button>
+        <div id="gravityValue"></div>
+      </div>
+    </div>
   </div>
-  <div class="buttons">
-  <div class="buttonsAmount">
-    <button id="buttIncreace">+</button>
-    <button id="buttDecreace">-</button>
-    <div id="generatedFigure"></div>
-  </div>
-  <div class="buttonsGravity">
-    <button id="gravUp">+</button>
-    <button id="gravDown">-</button>
-    <div id="gravityValue"></div>
-  </div>
-</div>
 </body>
 </html> 
