@@ -1,6 +1,3 @@
-"use strict";
-import {randomInteger} from './RandomInteger.js';
-
 class Figure {
     
   createFigure(shape) {

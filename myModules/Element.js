@@ -1,5 +1,3 @@
-"use strict";
-
 class Element {
   createElement(nameId) {
     const span = document.createElement('span');

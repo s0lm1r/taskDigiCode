@@ -1,5 +1,3 @@
-"use strict";
-
 class Button {
   getElement (id, config) {
     return document.getElementById(id).onclick = function() {

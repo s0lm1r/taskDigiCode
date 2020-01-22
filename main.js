@@ -1,6 +1,3 @@
-'use strict';
-
-
 import {element} from "./myModules/Element.js";
 import {button} from "./myModules/Button.js";
 import Game from "./myModules/Game.js";
@@ -19,17 +16,17 @@ const buttons = {
   gravityUp: button.getElement('gravUp', config),
   gravityDown: button.getElement('gravDown', config)
 };
+
 document.addEventListener('click', (event) => {
   const target =  event.target;
   if (target === document.getElementById('buttIncreace')
     || target === document.getElementById('buttDecreace')) {
     dispGenerated.innerHTML = `Figure per second: ${config.perSecond}`;
-  };
-
-  if (target === document.getElementById('gravUp')
-    || target === document.getElementById('gravDown')) {
-    dispValue.innerHTML = `Gravity value:  ${config.gravity}`;
-  }
+};
+if (target === document.getElementById('gravUp')
+  || target === document.getElementById('gravDown')) {
+  dispValue.innerHTML = `Gravity value: ${config.gravity}`;
+}
 });  
 
 const dispAmount = element.createElement('amountFigures');
